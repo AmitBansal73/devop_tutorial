@@ -1,5 +1,5 @@
 pipeline{
-	agent any
+	agent 'any'
 
 	stages{
 			stage('Build'){
@@ -30,12 +30,6 @@ pipeline{
 												}
 							}
 							stage ('Integration Test'){
-												agent{
-													docker{
-														reuseNode false
-														image 'ubuntu'
-													}
-												}
 												steps{
 												echo 'Running the unit test'
 												}
