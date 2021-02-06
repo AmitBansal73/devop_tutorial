@@ -1,35 +1,35 @@
-pipeline{
+pipeline {
 	agent 'any'
 
-	stages{
-			stage('Build'){
-						steps{
+	stages {
+			stage('Build') {
+						steps {
 						echo 'Hi this is Amit, running build'
 						}
 			}
-			stage('Test'){
-						steps{
+			stage('Test') {
+						steps {
 						input('Hi this is Amit, running build?')
 						}
 			}
-			stage('QA'){
-						when{
-								not{
+			stage('QA') {
+						when {
+								not {
 								branch 'master'
 								}
 						}
-						steps{
+						steps {
 							echo 'Hello'
 						}
 			}
-			stage('Deploy'){
-						parallel{
-							stage ('Unit Test'){
-												steps{
+			stage('Deploy') {
+						parallel {
+							stage ('Unit Test') {
+												steps {
 													echo 'Running the unit test'
 												}
 							}
-							stage ('Integration Test'){
+							stage ('Integration Test') {
 												steps{
 												echo 'Running the unit test'
 												}
