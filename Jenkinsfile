@@ -1,5 +1,5 @@
 pipeline {
-	agent 'any'
+	agent any
 
 	stages {
 			stage('Build') {
@@ -9,7 +9,7 @@ pipeline {
 			}
 			stage('Test') {
 						steps {
-						input('Hi this is Amit, running build?')
+						input('Hi, Should we proceed?')
 						}
 			}
 			stage('QA') {
