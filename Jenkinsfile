@@ -3,7 +3,9 @@ pipeline {
 
 	stages {
 			stage('Checkout git repo') {
-			  git branch: 'master', url: 'https://github.com/AmitBansal73/devop_tutorial.git'
+						steps {
+						  git branch: 'master', url: 'https://github.com/AmitBansal73/devop_tutorial.git'
+						  }
 						}
 			stage('Build') {
 						steps {
@@ -11,8 +13,10 @@ pipeline {
 						}
 					}
 			stage('build and publish') {
-							sh(script: "dotnet publish HelloAPI.sln -c Release ", returnStdout: true)
-						}
+						steps {
+										sh(script: "dotnet publish HelloAPI.sln -c Release ", returnStdout: true)
+							}
+					}
 			stage('Test') {
 						steps {
 						input('Hi, Should we proceed?')
