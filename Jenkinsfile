@@ -14,7 +14,7 @@ pipeline {
 					}
 			stage('build and publish') {
 						steps {
-										sh(script: "dotnet publish HelloAPI.sln -c Release ", returnStdout: true)
+										bat "dotnet publish HelloAPI.sln -c Release"
 							}
 					}
 			stage('Test') {
