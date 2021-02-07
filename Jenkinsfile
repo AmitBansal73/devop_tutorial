@@ -10,6 +10,7 @@ pipeline {
 			stage('Test') {
 						steps {
 						input('Hi, Should we proceed?')
+						echo 'proceeding'
 						}
 			}
 			stage('QA') {
