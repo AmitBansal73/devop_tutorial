@@ -3,7 +3,7 @@ pipeline {
 
 	stages {
 			stage('Checkout git repo') {
-			  git branch: 'master', url: https://github.com/AmitBansal73/devop_tutorial.git
+			  git branch: 'master', url: 'https://github.com/AmitBansal73/devop_tutorial.git'
 						}
 			stage('Build') {
 						steps {
